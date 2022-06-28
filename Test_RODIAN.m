@@ -109,6 +109,13 @@ function est = RODIAN(data, binEdges, binTab, nBinsCombinations)
         
     n = length(data);
     
+    if (n==0)
+        error('Empty input!')
+    elseif (n==1)
+        est = data(1);
+        return;
+    end
+    
     nBinsSize = length(nBinsCombinations);
     
     %% Sort and noramlize the data
